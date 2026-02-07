@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# 環境變數和敏感文件
+.env
+*.pem
+*.csv
+*.key
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 其他
+.DS_Store
+*.log
+README.md
+
+# Nginx 配置（應用程式 image 不需要）
+nginx/
+docker-compose.yml

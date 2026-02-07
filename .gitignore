@@ -1,0 +1,8 @@
+.env
+flask-app-user_accessKeys.csv
+msgcreator.pem
+
+# SSL 憑證（包含敏感信息）
+certbot/
+README.md
+__pycache__/app.cpython-313.pyc
