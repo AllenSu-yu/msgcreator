@@ -33,3 +33,9 @@ README.md
 # Nginx 配置（應用程式 image 不需要）
 nginx/
 docker-compose.yml
+
+# 教學文件
+教學文件/DEPLOY_UPDATE.md
+教學文件/DOCKER_DEPLOY.md
+教學文件/DOCKER_MONITORING.md
+教學文件/Nginx 設定教學.md

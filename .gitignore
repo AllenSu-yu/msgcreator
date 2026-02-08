@@ -6,3 +6,7 @@ msgcreator.pem
 certbot/
 README.md
 __pycache__/app.cpython-313.pyc
+教學文件/DEPLOY_UPDATE.md
+教學文件/DOCKER_DEPLOY.md
+教學文件/DOCKER_MONITORING.md
+教學文件/Nginx 設定教學.md

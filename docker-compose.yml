@@ -2,15 +2,15 @@ version: '3.8'
 
 services:
   app:
-    build: .
+    image: hueiyu/msgcreator:latest  # 改為使用 image 而不是 build
     # 移除直接暴露的端口，改由 Nginx 代理
     expose:
       - "8000"
     env_file:
       - .env
-    volumes:
-      # 掛載靜態文件目錄（開發時可即時更新）
-      - ./static:/app/static
+    # 移除或註解掉 volume 掛載，讓 image 中的 static 生效
+    # volumes:
+    #   - ./static:/app/static
     restart: unless-stopped
     networks:
       - app-network
@@ -22,10 +22,9 @@ services:
       - "443:443"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
-      - ./static:/app/static:ro  # 只讀掛載靜態文件
-      # SSL 憑證（Let's Encrypt）
-      - ./certbot/conf:/etc/letsencrypt:ro
-      - ./certbot/www:/var/www/certbot:ro
+      # Nginx 可以直接從 app 容器讀取，或使用 image 中的 static
+      # 如果需要從 image 讀取，可以移除這個掛載
+      # - ./static:/app/static:ro
     depends_on:
       - app
     restart: unless-stopped
